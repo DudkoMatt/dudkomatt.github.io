@@ -59,7 +59,7 @@ body {
     text-decoration: none;
 }
 
-.header-navigation-item__active {
+.header-navigation__item_active {
     color: var(--text-white)!important;
     text-decoration: underline!important;
 }
