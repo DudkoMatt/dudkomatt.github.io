@@ -1,0 +1,159 @@
+:root {
+    --text-gray: #a1a1a1;
+    --text-white: #fff;
+    --bg-gray-dark: #171717;
+    --bg-gray-dark-2: #0d0c0d;
+}
+
+body {
+    font-size: 16px;
+    line-height: 26px;
+    font-family: "Times New Roman", serif;
+    font-weight: normal;
+    font-style: normal;
+    font-variant: normal;
+    text-align: center;
+    background-color: black;
+    color: white;
+    text-indent: 0;
+    white-space: normal;
+}
+
+.header {
+    padding-top: 20px;
+    background-color: var(--bg-gray-dark);
+}
+
+.header__name {
+    font-weight: bolder;
+}
+
+.header__description {
+    font-size: 1.5em;
+    font-weight: normal;
+}
+
+.header__navigation {
+    font-variant: all-petite-caps;
+}
+
+.header-navigation__list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    list-style-type: none;
+    height: 50px;
+}
+
+.header-navigation__item {
+    flex-grow: 1;
+    display: list-item;
+    font-size: 1.2em;
+    margin: 0 25px;
+}
+
+.header-navigation__item a {
+    color: var(--text-gray);
+    text-decoration: none;
+}
+
+.header-navigation-item__active {
+    color: var(--text-white)!important;
+    text-decoration: underline!important;
+}
+
+.main {
+    padding-top: 20px;
+}
+
+.section {
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.section-bg-1 {
+    background-color: var(--bg-gray-dark);
+}
+
+.section-bg-2 {
+    background-color: var(--bg-gray-dark-2);
+}
+
+.section__article {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.section-article__header {
+    color: var(--text-white);
+    font-weight: bold;
+    font-size: 1.5em;
+}
+
+.section-article__text {
+    color: var(--text-gray);
+    font-weight: bold;
+}
+
+.section-article__aside {
+    /* There will be some flex alignment */
+}
+
+.section-article__blockquote {
+    font-variant: normal;
+}
+
+.section-article-blockquote__p {
+    font-style: normal;
+}
+
+.section-article-blockquote__cite {
+    font-style: italic;
+    padding-left: 200px;
+}
+
+.image-shadow {
+    box-shadow: 7px 7px 10px gray;
+}
+
+.section-article__list {
+    margin: 0;
+    padding: 0 50px 0 0;
+    list-style-position: inside;
+}
+
+.email {
+    color: inherit;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.margin-top-50 {
+    margin-top: 50px;
+}
+
+.footer {
+    background-color: var(--bg-gray-dark);
+}
+
+.footer__pre {
+    font-weight: bold;
+}
+
+.footer__code {
+    font-family: "Fira Code", serif;
+    font-size: small;
+    font-weight: normal;
+    background-color: #565656;
+    border: 1px solid #999999;
+    display: block;
+    padding: 5px 10px;
+    white-space: pre;
+    text-align: left;
+}
+
+.footer__copyright {
+    text-align: center;
+}
