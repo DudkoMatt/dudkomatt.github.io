@@ -3,9 +3,14 @@
     --text-white: #fff;
     --bg-gray-dark: #171717;
     --bg-gray-dark-2: #0d0c0d;
+    --nav-height: 70px;
+    --nav-gray-dark: #171717;
+    --nav-border-dark: #242424;
 }
 
 body {
+    margin: 0 !important;
+    padding: 0 !important;
     font-size: 16px;
     line-height: 26px;
     font-family: "Times New Roman", serif;
@@ -20,8 +25,22 @@ body {
 }
 
 .header {
-    padding-top: 20px;
+    padding: 0;
     background-color: var(--bg-gray-dark);
+    background-image: url('../Images/background_santiago-gomez-WpZmGDzOAi0-unsplash.jpg');
+    background-position: center 70%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: calc(100vh - var(--nav-height));
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.header h1, strong {
+    margin-top: 0;
+    align-items: center;
 }
 
 .header__name {
@@ -35,6 +54,12 @@ body {
 
 .header__navigation {
     font-variant: all-petite-caps;
+    position: sticky;
+    top: 0;
+    margin: 0 !important;
+    height: auto;
+    background: var(--nav-gray-dark);
+    box-shadow: 0 10px 10px var(--nav-border-dark);
 }
 
 .header-navigation__list {
@@ -44,14 +69,17 @@ body {
     flex-direction: row;
     flex-wrap: wrap;
     list-style-type: none;
-    height: 50px;
+    margin: 0 !important;
+    padding: 0 !important;
 }
 
 .header-navigation__item {
-    flex-grow: 1;
-    display: list-item;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     font-size: 1.2em;
-    margin: 0 25px;
+    margin: auto 100px;
+    height: var(--nav-height);
 }
 
 .header-navigation__item a {
@@ -64,9 +92,7 @@ body {
     text-decoration: underline!important;
 }
 
-.main {
-    padding-top: 20px;
-}
+.main {}
 
 .section {
     padding-top: 15px;
@@ -136,6 +162,8 @@ body {
 
 .footer {
     background-color: var(--bg-gray-dark);
+    padding-top: 16px;
+    padding-bottom: 16px;
 }
 
 .footer__pre {
