@@ -185,3 +185,13 @@ body {
 .footer__copyright {
     text-align: center;
 }
+
+@media screen and (max-width: 1350px) {
+    .header__navigation, .footer__pre {
+        display: none;
+    }
+
+    .header {
+        height: 100vh;
+    }
+}
