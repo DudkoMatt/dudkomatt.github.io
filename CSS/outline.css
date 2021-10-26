@@ -92,6 +92,13 @@ body {
     text-decoration: underline!important;
 }
 
+.go-up {
+    position: fixed;
+    bottom: 0;
+    right: 10px;
+    filter: invert();
+}
+
 .main {}
 
 .section {
