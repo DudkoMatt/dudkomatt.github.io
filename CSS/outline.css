@@ -125,6 +125,45 @@ body {
     font-size: 1.5em;
 }
 
+.section-article__table {
+    text-align: center;
+    width: 100%;
+    border: 1px solid white;
+    table-layout: fixed;
+}
+
+.section-article__table img {
+    width: 500px;
+}
+
+.section-article-table__tr {}
+
+.table__tr_1 {
+    background: #777777;
+}
+
+.table__tr_2 {
+    background: #333333;
+}
+
+.section-article-table__thead {}
+
+.section-article-table-tr__td {
+    border: 1px solid white;
+    padding: 10px 0;
+    overflow: hidden;
+}
+
+.tr__td_left {
+    padding-left: 40px;
+    text-align: left;
+}
+
+.tr__td_right {
+    padding-right: 40px;
+    text-align: right;
+}
+
 .section-article__text {
     color: var(--text-gray);
     font-weight: bold;
