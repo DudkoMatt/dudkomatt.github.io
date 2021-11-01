@@ -89,8 +89,8 @@ body {
 }
 
 .header-navigation__item_active {
-    color: var(--text-white)!important;
-    text-decoration: underline!important;
+    color: var(--text-white) !important;
+    text-decoration: underline !important;
 }
 
 .go-up {
@@ -100,7 +100,8 @@ body {
     filter: invert();
 }
 
-.main {}
+.main {
+}
 
 .section {
     padding-top: 15px;
@@ -146,9 +147,11 @@ body {
     width: var(--table-image-width);
 }
 
-.section-article__table thead {}
+.section-article__table thead {
+}
 
-.section-article__table tbody {}
+.section-article__table tbody {
+}
 
 .section-article__table tr:nth-child(odd) {
     background: #777777;
