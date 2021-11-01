@@ -105,6 +105,7 @@ body {
 .section {
     padding-top: 15px;
     padding-bottom: 15px;
+    scroll-margin-top: var(--nav-height);
 }
 
 .section-bg-1 {
