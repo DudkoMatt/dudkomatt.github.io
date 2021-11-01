@@ -136,7 +136,8 @@ body {
 
 .section-article__table {
     text-align: center;
-    width: var(--table-image-width);
+    min-width: var(--table-image-width);
+    width: 80%;
     border: 1px solid white;
     table-layout: auto;
 }
