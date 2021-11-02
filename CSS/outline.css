@@ -251,6 +251,10 @@ body {
     text-align: center;
 }
 
+.footer__load-time {
+    color: var(--text-gray);
+}
+
 @media screen and (max-width: 1350px) {
     .header__navigation, .footer__pre {
         display: none;
