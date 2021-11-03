@@ -25,6 +25,10 @@ body {
     white-space: normal;
 }
 
+#top {
+    visibility: hidden;
+}
+
 .header {
     padding: 0;
     background-color: var(--bg-gray-dark);
@@ -88,6 +92,11 @@ body {
     text-decoration: none;
 }
 
+.header-navigation__item a:hover {
+    color: var(--text-white);
+    text-shadow: 0 0 5px white;
+}
+
 .header-navigation__item_active {
     color: var(--text-white) !important;
     text-decoration: underline !important;
@@ -106,7 +115,7 @@ body {
 .section {
     padding-top: 15px;
     padding-bottom: 15px;
-    scroll-margin-top: var(--nav-height);
+    scroll-margin-top: calc(var(--nav-height) - 1px);
 }
 
 .section-bg-1 {
@@ -249,6 +258,10 @@ body {
 
 .footer__copyright {
     text-align: center;
+}
+
+.footer__load-time {
+    color: var(--text-gray);
 }
 
 @media screen and (max-width: 1350px) {

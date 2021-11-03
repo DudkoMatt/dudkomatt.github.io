@@ -6,23 +6,30 @@
     <meta name="keywords" content="cv, portfolio, resume, full-stack, programmer">
     <meta name="description" content="Dudko Matvey's Resume: Full-Stack Developer">
     <meta name="author" content="Dudko Matvey">
+    <script type="text/javascript" src="JS/page_load_stat.js"></script>
     <link rel="stylesheet" href="CSS/outline.css">
+    <script
+            src="https://code.jquery.com/jquery-3.6.0.slim.min.js"
+            integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI="
+            crossorigin="anonymous"></script>
+    <script type="text/javascript" src="JS/navigation_bar_styling.js"></script>
 </head>
 <body>
+<div id="top"></div>
 <header class="header">
     <h1 class="header__name">I'm Matvey Dudko!</h1>
     <strong class="header__description">Full-stack developer</strong>
 </header>
 <nav class="header__navigation">
     <ul class="header-navigation__list">
-        <li class="header-navigation__item"><a href="#" class="header-navigation__item_active">Home</a></li>
+        <li class="header-navigation__item"><a href="#top" class="header-navigation__item_active">Home</a></li>
         <li class="header-navigation__item"><a href="#profile">Profile</a></li>
         <li class="header-navigation__item"><a href="#portfolio">Portfolio</a></li>
         <li class="header-navigation__item"><a href="#skills">Skills</a></li>
         <li class="header-navigation__item"><a href="#contacts">Contacts</a></li>
     </ul>
 </nav>
-<a class="go-up" href="#">
+<a class="go-up" href="#top">
     <img src="Images/Icons/chevron-up.svg" alt="Go up">
 </a>
 <main class="main">
@@ -136,6 +143,9 @@ __/\\\\\\\\\\\\__________________________/\\\______________________________
         </pre>
     <div class="footer__copyright">
         &copy; 2021 Matvey Dudko. All rights reserved.
+    </div>
+    <div class="footer__load-time">
+        Page load time is <span id="page_load_time"></span> seconds.
     </div>
 </footer>
 </body>
