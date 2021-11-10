@@ -1,0 +1,82 @@
+@import "outline.css";
+
+body {
+    /*TODO*/
+    /*background: inherit;*/
+    background: black;
+}
+
+.h1 {
+
+}
+
+.no_margin {
+    margin: 0 !important;
+}
+
+.no_padding {
+    padding: 0 !important;
+}
+
+.center_vertically {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.child_min_max_width>* {
+    min-width: 400px;
+    max-width: 600px;
+}
+
+.section-article__form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.section-article-from__options {
+    background: white;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.section-article-form__input {
+    width: 100%;
+    /*ToDO*/
+    border: none;
+}
+
+.section-article-from-options__counter {
+    padding-left: 20px;
+    color: black;
+}
+
+.section-article-from-options__button {
+    margin-right: 5px;
+    display: inline;
+}
+
+.section_article__item_container {
+
+}
+
+.section_article__item_container div {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    height: 50px;
+    padding-left: 30px;
+}
+
+.section_article__item_container div:nth-child(odd) {
+    background: #262626;
+}
+
+.section_article__item_container div:nth-child(even) {
+    background: #383838;
+}
