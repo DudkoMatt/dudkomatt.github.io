@@ -248,6 +248,12 @@ body {
     text-decoration: underline;
 }
 
+.letter-template-generator-link {
+    color: inherit;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
 .margin-top-50 {
     margin-top: 50px;
 }

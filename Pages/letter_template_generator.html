@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Letter Template Generator</title>
+    <link rel="stylesheet" href="../CSS/letter_template_generator.css">
+    <script
+            src="https://code.jquery.com/jquery-3.6.0.slim.min.js"
+            integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI="
+            crossorigin="anonymous"></script>
+    <script src="../JS/letter_template_generator.js"></script>
+</head>
+<body>
+<header>
+    <h1 class="h1">Letter template generator</h1>
+</header>
+<main>
+    <section class="section">
+        <article class="section__article no_margin no_padding center_vertically">
+            <form class="section-article__form min_max_width" id="form_letter_template">
+                <input class="section-article-form__input" type="text" placeholder="> Type in your idea... [Tip: click on the arrow to remove the item]" id="input_idea_text" name="text">
+                <div class="section-article-from__options hidden" id="toolbar">
+                    <span class="section-article-from-options__counter"><span id="idea_counter">0</span> idea(s)</span>
+                    <button class="section-article-from-options__button" type="button" onclick="onResult()">Generate</button>
+                    <button class="section-article-from-options__button" type="button" onclick="onFormClean()">Clear all</button>
+                </div>
+            </form>
+            <div class="section_article__item_container min_max_width" id="item_container">
+            </div>
+            <div class="section_article__result_container min_max_width hidden" id="result_container">
+                <h1>Result</h1>
+                <pre id="result_container_text"></pre>
+            </div>
+        </article>
+    </section>
+</main>
+</body>
+</html>
