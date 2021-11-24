@@ -124,26 +124,61 @@ function onFormClean() {
     $("#toolbar").addClass("hidden");
     $("#result_container").addClass("hidden");
     $("#idea_counter").text(0);
+    cleanFormValue();
     cleanAllLocalStorage();
 }
 
+// function sleep(milliseconds) {
+//     const date = Date.now();
+//     let currentDate = null;
+//     do {
+//         currentDate = Date.now();
+//     } while (currentDate - date < milliseconds);
+// }
+
 function onResult() {
-    $("#result_container").removeClass("hidden");
-    let topics = $(".item_container__item > span").toArray().map((e) => {
+    currentChild = 0;
+    renderedText = `Dear Matvey,
+I have several ideas to discuss:
+`;
+    allChildren = $(".item_container__item > span").toArray().map((e) => {
         return e.innerHTML.trim();
     });
 
-    let text = `Dear Matvey,
-I have several ideas to discuss:
-`;
+    if (allChildren.length > 0) {
+        $("#result_container").removeClass("hidden");
+        setTimeout(renderResult);
+    }
+}
 
-    for (let i = 0; i < topics.length; i++) {
-        text += `${(i + 1).toString()}. ${topics[i]}:\n`
-        text += `\n`
-        text += `=== DETAILS ===\n`
-        text += `\n`
-        text += `\n`
+let currentChild = 0;
+let allChildren = null;
+let renderedText = '';
+let step = 1;
+
+function renderResult() {
+    if (allChildren === null || allChildren.length === 0) {
+        throw new Error("allChildren cannot be null");
     }
 
-    $("#result_container_text").text(text);
+    // console.log("Before sleep");
+    // sleep(100);
+    // console.log("After sleep");
+
+
+    for (let i = currentChild; i < allChildren.length && i < currentChild + step; i++) {
+        renderedText += `${(i + 1).toString()}. ${allChildren[i]}:\n`
+        renderedText += `\n`
+        renderedText += `=== DETAILS ===\n`
+        renderedText += `\n`
+        renderedText += `\n`
+    }
+
+    currentChild = Math.min(currentChild + step, allChildren.length);
+
+    if (currentChild === allChildren.length) {
+        $("#result_container_text").text(renderedText);
+    } else {
+        setTimeout(renderResult);
+    }
 }
