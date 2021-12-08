@@ -1,0 +1,23 @@
+@import "outline.css";
+
+#holder {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: space-evenly;
+}
+
+#holder img {
+    width: 150px;
+    height: 150px;
+    margin: 25px;
+}
+
+#loading_circle {
+    width: 100px;
+    filter: invert();
+}
+
+.hidden {
+    display: none;
+}
