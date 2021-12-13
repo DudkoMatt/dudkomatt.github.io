@@ -1,0 +1,11 @@
+/* Смотри файл /JS/letter_template_generator/extensions/notie.js */
+
+@import "root.css";
+
+.notie-container {
+    font-family: "Fira Code", serif;
+}
+
+.notie-background-info {
+    background: #606060;
+}

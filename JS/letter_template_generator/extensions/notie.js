@@ -14,6 +14,9 @@
 //
 // Для решения данной задачи подходит UI библиотека для JS "notie":
 // https://github.com/jaredreich/notie
+//
+//
+// Для кастомизации элементов были изменены стили в файле /CSS/notie_outline.css
 
 const DURATION_MESSAGES = 1.5;
 const POSITION = 'top';
