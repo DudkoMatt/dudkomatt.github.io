@@ -9,7 +9,8 @@
             src="https://code.jquery.com/jquery-3.6.0.slim.min.js"
             integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI="
             crossorigin="anonymous"></script>
-    <script src="../JS/letter_template_generator.js"></script>
+    <script type="module" src="../JS/letter_template_generator/extensions/notie.js"></script>
+    <script type="module" src="../JS/letter_template_generator/letter_template_generator.js"></script>
     <script defer src="https://unpkg.com/notie"></script>
 </head>
 <body>
@@ -23,8 +24,8 @@
                 <input class="section-article-form__input" type="text" placeholder="> Type in your idea... [Tip: click on the arrow to remove the item]" id="input_idea_text" name="text">
                 <div class="section-article-from__options hidden" id="toolbar">
                     <span class="section-article-from-options__counter"><span id="idea_counter">0</span> idea(s)</span>
-                    <button class="section-article-from-options__button" type="button" onclick="onResult()">Generate</button>
-                    <button class="section-article-from-options__button" type="button" onclick="onFormClean()">Clear all</button>
+                    <button class="section-article-from-options__button" type="button" id="btnResult">Generate</button>
+                    <button class="section-article-from-options__button" type="button" id="btnFormClean">Clear all</button>
                 </div>
             </form>
             <div class="section_article__item_container min_max_width" id="item_container">
