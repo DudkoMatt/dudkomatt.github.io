@@ -1,3 +1,14 @@
+import {
+    onAdd as notieOnAdd,
+    onEmptyForm as notieOnEmptyForm,
+    onError as notieOnError,
+    onErase as notieOnErase,
+    onSavedDataLoad as notieOnSavedDataLoad,
+    onRenderingStart as notieOnRenderingStart,
+    onRenderingEnd as notieOnRenderingEnd,
+    onEraseDone as notieOnEraseDone
+} from './extensions/notie.js';
+
 // On window load
 (() => {
     console.log("Generator" + window.location.href);
@@ -10,6 +21,9 @@
         $("#form_letter_template").on("submit", onFormSubmit);
         loadSavedItems();
     });
+
+    $("#btnResult").on("click", onResult);
+    $("#btnFormClean").on("click", () => notieOnErase(() => {onFormClean(); notieOnEraseDone()}));
 })();
 
 const KEY_NAME = "LETTER_TEMPLATE_GENERATOR_ITEMS";
@@ -48,6 +62,7 @@ function loadSavedItems() {
         savedItems.items.forEach((item) => {
             processItem(item, false);
         });
+        notieOnSavedDataLoad();
     }
 }
 
@@ -62,7 +77,7 @@ function cleanFormValue() {
 function createNewItem(text) {
     $("#item_container").append(`
     <div class="item_container__item">
-        <img src="../Images/Icons/chevron-right.svg" class="arrow" alt="">
+        <img src="../../Images/Icons/chevron-right.svg" class="arrow" alt="">
         <span>
         ${text}
         </span>
@@ -84,15 +99,19 @@ function onFormSubmit() {
     try {
         let form_value = getFormValue();
         console.log(form_value);
-        processItem(form_value);
+        if (processItem(form_value)) {
+            notieOnAdd();
+        }
     } catch (e) {
         console.error(e);
+        notieOnError();
     }
 
     return false;
 }
 
 function processItem(text, save=true) {
+    text = text.trim()
     if (text.length > 0) {
         if (save) {
             saveToLocalStorage(text);
@@ -100,21 +119,25 @@ function processItem(text, save=true) {
         createNewItem(text);
         cleanFormValue();
         updateCounter();
+
+        let lastChild = $("#item_container").children().last();
+        let lastChildArrow = lastChild.children("img.arrow")[0];
+        lastChildArrow.onclick = (() => {
+            let index = $("#item_container").children().index(lastChild);
+            try {
+                cleanFromLocalStorage(index);
+            } catch (e) {
+                console.log(e);
+            }
+
+            lastChild.parent()[0].removeChild(lastChild[0]);
+            updateCounter();
+        });
+        return true;
+    } else {
+        notieOnEmptyForm();
+        return false;
     }
-
-    let lastChild = $("#item_container").children().last();
-    let lastChildArrow = lastChild.children("img.arrow")[0];
-    lastChildArrow.onclick = (() => {
-        let index = $("#item_container").children().index(lastChild);
-        try {
-            cleanFromLocalStorage(index);
-        } catch (e) {
-            console.log(e);
-        }
-
-        lastChild.parent()[0].removeChild(lastChild[0]);
-        updateCounter();
-    });
 }
 
 function onFormClean() {
@@ -137,6 +160,7 @@ function onFormClean() {
 // }
 
 function onResult() {
+    notieOnRenderingStart();
     currentChild = 0;
     renderedText = `Dear Matvey,
 I have several ideas to discuss:
@@ -178,6 +202,7 @@ function renderResult() {
 
     if (currentChild === allChildren.length) {
         $("#result_container_text").text(renderedText);
+        notieOnRenderingEnd();
     } else {
         setTimeout(renderResult);
     }

@@ -6,6 +6,10 @@ body {
     background: black;
 }
 
+header {
+    padding-top: 125px;
+}
+
 .no_margin {
     margin: 0 !important;
 }
