@@ -31,7 +31,12 @@ function onLoadMore() {
         }
 
         fetch('https://jsonplaceholder.typicode.com/photos')
-            .then(response => response.json())
+            .then(response => {
+                if (response.ok) {
+                    return response.json()
+                }
+                throw new Error("Something went wrong");
+            })
             .then(json => json[getRandomInt(json.length)])
             .then(json_elem => {console.log(json_elem); return json_elem})
             .then(json_elem => addPhoto(json_elem['url']))
